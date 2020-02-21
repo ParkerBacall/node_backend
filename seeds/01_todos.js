@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('todos').insert([
-        {text: 'ayy'},
-        {text: 'this worsssks'},
-        {text: 'sick'}
+        {title: 'do me', text: 'ayy'},
+        {title: 'yeet', text: 'this worsssks'},
+        {title: 'yeet', text: 'sick'}
       ]);
     });
 };

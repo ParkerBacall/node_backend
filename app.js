@@ -7,6 +7,10 @@ app.listen(port, () =>{
     console.log(`listening on ${port}`)
 })
 
-app.get('/', (request, response) => {
+app.get('/todos', (request, response) => {
     queries.listAll().then(todos => response.send(todos))
+})
+
+app.get('/todos/:id', (request, response) => {
+    queries.showTodo(request.params.id).then(todo => response.send(todo))
 })
