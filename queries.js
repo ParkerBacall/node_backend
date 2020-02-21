@@ -9,5 +9,22 @@ module.exports = {
     showTodo(id){
         return database('todos')
           .where('id', id)
-       }
+       },
+    create(input){
+        return database('todos')
+         .insert(input)
+          .returning('*')
+    },
+    delete(id){
+        return database('todos')
+          .where('id', id)
+          .delete()
+      },
+    updateTodo(id, input){
+        return database('todos')
+         .where('id', id)
+         .update(input)
+    }
+    
+    
 }
