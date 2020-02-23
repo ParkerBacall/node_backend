@@ -24,6 +24,7 @@ module.exports = {
         return database('todos')
          .where('id', id)
          .update(input)
+         .returning('*')
     }
     
     

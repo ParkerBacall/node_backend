@@ -19,13 +19,13 @@ app.get('/todos/:id', (request, response) => {
 })
 
 app.post('/todos', (request, response) => {
-    queries.create(request.body)
+    queries.create(request.body).then(todo => response.send(todo))
 })
 
 app.delete('/todos/:id', (request, response) => {
-    queries.delete(request.params.id).then(response.send("ddddd"))
+    queries.delete(request.params.id).then(response.send("todo deleted"))
 })
 
 app.put('/todos/:id', (request, response)=> {
-    queries.updateTodo(request.params.id, request.body).then(response.send("ddddd"))
+    queries.updateTodo(request.params.id, request.body).then(todo => response.send(todo))
 })
