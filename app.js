@@ -3,6 +3,10 @@ const app = express()
 const port = process.env.PORT || 8001
 const queries = require('./queries.js')
 const bodyParser = require('body-parser')
+const cors = require('cors')
+
+app.use(cors())
+
 
 app.use(bodyParser.json())
 
